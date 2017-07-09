@@ -1,0 +1,22 @@
+# default directories
+directories:
+  APP:             application
+  WWW:             public
+  CONFIG:          config
+  CACHE:           cache
+  GF:              GF
+  DEFAULT_MODULE:  Main
+
+# settings section
+settings:
+  # when false, working only Main module
+  MODULES_ENABLED: true
+
+  # when false, classpaths.cache is not used by autoloader
+  # "true" is recommended for wide projects
+  CACHE_ENABLED:   true
+
+  sub-settings:
+    ONE:           1
+    TWO:           2
+    THREE:         3
