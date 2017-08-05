@@ -1,0 +1,23 @@
+# Settings for connect with database per environment
+connections:
+  production:
+    adapter: mysql
+    host: localhost
+    port: 3306
+    user: admin
+    pass: pass
+    base: application_production
+  development:
+    adapter: mysql
+    host: localhost
+    port: 3306
+    user: admin
+    pass: pass
+    base: application_development
+  test:
+    adapter: mysql
+    host: localhost
+    port: 3306
+    user: admin
+    pass: pass
+    base: application_test

@@ -1,0 +1,5 @@
+# This settings will override default ones, loaded from settings.yml
+environments:
+  production:
+  development:
+  test:

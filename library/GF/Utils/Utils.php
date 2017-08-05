@@ -21,7 +21,55 @@ class Utils
         $type = ucfirst(strtolower($type));
         $name = ucfirst($name);
         if ($type == 'Action') lcfirst($name);
-        if ($type == 'Module') return $name . '\\' ;
+        if ($type == 'Module') return ucfirst($name) . '\\' ;
         return $name . $type;
+    }
+
+    public static function loadYaml($file, $env = NULL)
+    {
+        $sets = yaml_parse_file($file);
+        switch (current(array_keys($sets))) {
+            case 'environments':
+            case 'connections':
+                foreach ($sets as $set) {
+                    foreach ($set as $const => $value ) {
+                        if ($const != $env) continue;
+                        if (is_array($value)) {
+                            $prefix = '';
+                            foreach ($value as $const1 => $value1 ) {
+                                if (basename($file, '.yml') == 'connections') {
+                                    $prefix = 'DB_';
+                                }
+                                define($prefix.strtoupper($const1), $value1);
+                            }
+                        }
+                    }
+                }
+                break;
+            default:
+                foreach ($sets as $set) {
+                    if (is_null($set)) continue;
+                    foreach ($set as $const => $value ) {
+                        if (is_array($value)) {
+                            foreach ($value as $const1 => $value1 ) {
+                                define($const1, $value1);
+                            }
+                            continue;
+                        }
+                        if ($const == 'APP') $app = $value;
+                        switch ($const) {
+                            case 'CACHE':
+                                $value = 'data' . DIRECTORY_SEPARATOR . $value;
+                                break;
+                            case 'GF':
+                                $value = 'library' . DIRECTORY_SEPARATOR . $value;
+                                break;
+                            case 'DEFAULT_MODULE':
+                                $value = $app . DIRECTORY_SEPARATOR . 'modules' . DIRECTORY_SEPARATOR . $value;
+                        }
+                        define($const, $value);
+                    }
+                }
+        }
     }
 }

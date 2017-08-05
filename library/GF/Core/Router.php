@@ -52,7 +52,7 @@ class Router
 
             $controller = $module . 'controllers\\' . $controller;
             if (class_exists($controller)) {
-                $controllerObject = new $controller;
+                $controllerObject = new $controller(self::$route);
                 $controllerObject->$action();
             } else {
                 echo "controller <b>$controller</b> not found";

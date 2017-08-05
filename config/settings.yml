@@ -5,6 +5,7 @@ directories:
   CONFIG:          config
   CACHE:           cache
   GF:              GF
+  MODULES:         modules
   DEFAULT_MODULE:  Main
 
 # settings section
@@ -15,6 +16,9 @@ settings:
   # when false, classpaths.cache is not used by autoloader
   # "true" is recommended for wide projects
   CACHE_ENABLED:   true
+
+  # Main layout for app views
+  LAYOUT_MAIN:     default
 
   sub-settings:
     ONE:           1

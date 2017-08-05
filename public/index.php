@@ -3,7 +3,9 @@
  *
  */
 
+use \GF\Core\Application as Application;
+
 require_once '../config/bootstrap.php';
 
-// \GF\Utils\Utils::debug(get_declared_classes());
-
+$app = new Application('development');
+$app->run();

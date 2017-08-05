@@ -5,12 +5,12 @@
 
 use \GF\Core\Router as Router;
 
-$query = rtrim($_SERVER['QUERY_STRING'], '/');
-
 //  User routes
-//  Plase your custom routes here:
+//  Place your custom routes here:
 
-//  replase me :)
+//  replace me :)
+Router::add('^pages/(?P<action>[a-z-]+)/(?P<alias>[a-z-]+)$', ['controller' => 'Pages']);
+Router::add('^pages/(?P<alias>[a-z-]+)$', ['controller' => 'Pages', 'action' => 'view']);
 
 //  Main routes
 Router::add('^$', ['module' => 'Main', 'controller' => 'Index', 'action' => 'index']);
@@ -23,5 +23,3 @@ if (MODULES_ENABLED) {
 } else {
     Router::add('^(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$');
 }
-
-Router::dispatch($query);

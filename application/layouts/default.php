@@ -1,7 +1,10 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Igor Klekotnev
- * Date: 03.07.17
- * Time: 0:07
- */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gusli Framework</title>
+</head>
+<body>
+
+</body>
+</html>

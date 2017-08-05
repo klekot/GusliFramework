@@ -3,11 +3,12 @@
 namespace Test\controllers;
 
 use \GF\Core\AbstractController as AbstractController;
+use GF\Utils\Utils;
 
 class IndexController extends AbstractController
 {
     public function indexAction()
     {
-        echo 'Test '.__CLASS__ . ' ' . __METHOD__;
+        Utils::debug($this->route);
     }
 }
