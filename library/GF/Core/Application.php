@@ -19,8 +19,10 @@ class Application
             $environment);
 
         // Load DB connection settings
-        Utils::loadYaml(dirname(__DIR__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'db' . DIRECTORY_SEPARATOR . 'connections.yml',
+        Utils::loadYaml(dirname(__DIR__) . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'db_connections.yml',
             $environment);
+
+        new DbConnection($environment);
     }
 
     public function run()

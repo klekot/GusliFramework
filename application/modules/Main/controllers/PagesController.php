@@ -10,12 +10,12 @@ namespace Main\controllers;
 
 
 use GF\Core\AbstractController;
-use GF\Utils\Utils;
 
 class PagesController extends AbstractController
 {
     public function viewAction()
     {
-        Utils::debug($this->route);
+        $this->view->name = 'qq';
+        $this->view->show();
     }
 }

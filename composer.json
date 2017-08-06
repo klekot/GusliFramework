@@ -1,0 +1,12 @@
+{
+    "name": "klekot/gusli-framework.local",
+    "require": {
+        "php-activerecord/php-activerecord": "^1.2"
+    },
+    "authors": [
+        {
+            "name": "Igor Klekotnev",
+            "email": "klekotnev@gmail.com"
+        }
+    ]
+}

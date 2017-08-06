@@ -1,24 +1,29 @@
 # default directories
 directories:
-  APP:             application
-  WWW:             public
-  CONFIG:          config
-  CACHE:           cache
-  GF:              GF
-  MODULES:         modules
-  DEFAULT_MODULE:  Main
+  APP:                 application
+  WWW:                 public
+  CONFIG:              config
+  CACHE:               cache
+  GF:                  GF
+  MODELS:              models
+  MODULES:             modules
+  DEFAULT_MODULE:      Main
 
 # settings section
 settings:
   # when false, working only Main module
-  MODULES_ENABLED: true
+  MODULES_ENABLED:     true
 
   # when false, classpaths.cache is not used by autoloader
   # "true" is recommended for wide projects
-  CACHE_ENABLED:   true
+  CACHE_ENABLED:       false
 
   # Main layout for app views
-  LAYOUT_MAIN:     default
+  LAYOUT_MAIN:         default
+
+  CONTENT_PLACEHOLDER: SITE_CONTENT
+
+  ENVIRONMENT:         development
 
   sub-settings:
     ONE:           1

@@ -1,7 +1,9 @@
 <?php
+
 /**
  *
  */
+
 namespace GF\Utils;
 
 class Utils
@@ -37,7 +39,7 @@ class Utils
                         if (is_array($value)) {
                             $prefix = '';
                             foreach ($value as $const1 => $value1 ) {
-                                if (basename($file, '.yml') == 'connections') {
+                                if (basename($file, '.yml') == 'db_connections') {
                                     $prefix = 'DB_';
                                 }
                                 define($prefix.strtoupper($const1), $value1);
@@ -64,8 +66,13 @@ class Utils
                             case 'GF':
                                 $value = 'library' . DIRECTORY_SEPARATOR . $value;
                                 break;
+                            case 'MODELS':
+                                $value = ROOT. DIRECTORY_SEPARATOR . $app . DIRECTORY_SEPARATOR . $value;
+                                break;
                             case 'DEFAULT_MODULE':
                                 $value = $app . DIRECTORY_SEPARATOR . 'modules' . DIRECTORY_SEPARATOR . $value;
+                            case 'LAYOUT_MAIN':
+                                $value = $app . DIRECTORY_SEPARATOR . 'layouts' . DIRECTORY_SEPARATOR . $value . '.php';
                         }
                         define($const, $value);
                     }
