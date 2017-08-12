@@ -1,4 +1,4 @@
-#Installation
+# Installation
 
 * You need at least PHP 5.6 to play on the Gusli.
 * You can use *'git clone'* to copy start fileset in desired folder on your server.
