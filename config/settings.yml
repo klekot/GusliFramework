@@ -21,11 +21,17 @@ settings:
   # Main layout for app views
   LAYOUT_MAIN:         default
 
+  # The placeholder in site layout, which will be replaced with page content
   CONTENT_PLACEHOLDER: SITE_CONTENT
 
+  # Choose type of application environment
   ENVIRONMENT:         development
 
+  # Here you can define any custom constants for your application.
+  # For example:
+  # Make some group for constants
   sub-settings:
-    ONE:           1
-    TWO:           2
-    THREE:         3
+    # Define some CONSTANT: value pair
+    SOME_CONSTANT1: value1
+    SOME_CONSTANT2: value2
+    SOME_CONSTANT3: value3
