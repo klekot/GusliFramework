@@ -6,3 +6,4 @@
 * Edit your configuration files to set correct environment and database connection.
 * Also you need such tool as **Composer** installed on your server.
 * Run *'composer install'* command to install **php-activerecord** ORM library.
+* Switch to data directory and make directory *'cache'* with full read/write access.
