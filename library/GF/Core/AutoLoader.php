@@ -8,7 +8,7 @@ class AutoLoader {
     public static function load()
     {
         spl_autoload_register(function ($class) {
-            $class_filename = str_replace("\\", '/', $class) . ".php";
+            $class_filename = str_replace("\\", DIRECTORY_SEPARATOR, $class) . ".php";
             $class_root = ROOT;
             $cache_file = ROOT. DIRECTORY_SEPARATOR . CACHE . DIRECTORY_SEPARATOR . 'classpaths.cache';
             $path_cache = (file_exists($cache_file)) ? unserialize(file_get_contents($cache_file)) : array();
