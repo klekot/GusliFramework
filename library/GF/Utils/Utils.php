@@ -79,4 +79,39 @@ class Utils
                 }
         }
     }
+
+    public static function normalizeContent($viewContent, $layoutContent)
+    {
+        $content = preg_replace('/'.CONTENT_PLACEHOLDER.'/', $viewContent, $layoutContent);
+        $normalizedContent = '';
+        $positionsOfBegins = self::_getOccurrence($content, '<?php');
+        $positionsOfEnds   = self::_getOccurrence($content, '?>');
+
+        if (count($positionsOfBegins) != count($positionsOfEnds)) {
+            foreach ($positionsOfBegins as $bKey => $begin) {
+                foreach ($positionsOfEnds as $eKey => $end) {
+                    if (isset($positionsOfEnds[$bKey]) && $positionsOfBegins[$bKey] < $positionsOfEnds[$bKey]) {
+                        continue;
+                    } else {
+                        $normalizedContent = preg_replace('/'.CONTENT_PLACEHOLDER.'/', $viewContent . '?>', $layoutContent);
+                    }
+                }
+            }
+        } else {
+            $normalizedContent = $content;
+        }
+
+        return $normalizedContent;
+    }
+
+    private function _getOccurrence($string, $subString)
+    {
+        $lastPos = 0;
+        $positions = array();
+        while (($lastPos = strpos($string, $subString, $lastPos))!== false) {
+            $positions[] = $lastPos;
+            $lastPos = $lastPos + strlen($subString);
+        }
+        return $positions;
+    }
 }

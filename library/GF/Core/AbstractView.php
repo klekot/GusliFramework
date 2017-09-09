@@ -8,6 +8,8 @@
 
 namespace GF\Core;
 
+use GF\Utils\Utils as Utils;
+
 class AbstractView
 {
     public $layout;
@@ -25,15 +27,14 @@ class AbstractView
             DIRECTORY_SEPARATOR . $route['action'] . '.php';
     }
 
-    public function show($layoutOnly = false)
+    public function show($customLayout = null, $layoutOnly = false)
     {
         ob_start();
+        $layout = ($customLayout) ? ROOT . DIRECTORY_SEPARATOR . APP. DIRECTORY_SEPARATOR . 'layouts' . DIRECTORY_SEPARATOR . $customLayout . '.php' : $this->layout;
         $viewContent   = (file_exists($this->view))   ? file_get_contents($this->view)   : '<p>View file not found  </p>';
-        $layoutContent = (file_exists($this->layout)) ? file_get_contents($this->layout) : '<p>Layout file not found</p>';
-        $mixContent = preg_replace('/'.CONTENT_PLACEHOLDER.'/', $viewContent, $layoutContent);
-
-        $resultContent = ($layoutOnly) ? str_replace(CONTENT_PLACEHOLDER, '', $layoutContent ): $mixContent;
-        eval('?>' . $resultContent . '<?php ');
+        $layoutContent = (file_exists($layout)) ? file_get_contents($layout) : '<p>Layout file not found</p>';
+        $mixContent = ($layoutOnly) ? str_replace(CONTENT_PLACEHOLDER, '', $layoutContent ) : Utils::normalizeContent($viewContent, $layoutContent);
+        eval('?>' . $mixContent . '<?php ');
         $result = ob_get_contents();
         ob_end_clean();
         echo $result;
