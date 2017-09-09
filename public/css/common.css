@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Mono');
+
+html {
+    //background-color: #1b6d85;
+}
+
+.header-banner {
+    text-align: center;
+    font-family: 'PT Mono', monospace;
+    font-weight: 700; !important
+}
+
+.header-banner a {
+    color: #000;
+}
+
+.header-banner a:hover{
+    color: #000;
+    text-decoration: none;
+}
+
+.header-banner a:focus{
+    color: #000;
+    text-decoration: none;
+}
+
+.header-banner a:visited {
+    color: #000;
+}
+
+#navbar {
+    font-family: 'PT Mono', monospace;
+    font-size: medium;
+}
+
+.layout-wrapper {
+    padding-top: 50px;
+}
+
+.main-title {
+    font-family: 'Yeseva One', cursive;
+}
+
+.main-igor {
+    text-align: center;
+}
+
+.main-igor img {
+    border-radius: 10%;
+    max-height: 300px;
+    margin: 50px;
+}
+
+.cite-container {
+    content-align: center;
+}
+
+.cite {
+    margin: 0 auto;
+    max-width: 410px;
+    font-family: 'Marck Script', cursive;
+    font-size: 20px;
+}
+
+.cite ul {
+    list-style-type: none;
+}
+
+.input-group {
+    padding-top: 7px;
+}
+
+.col-lg-5.search {
+    padding-right: 0px;
+}
