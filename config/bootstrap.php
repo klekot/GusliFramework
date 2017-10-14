@@ -16,4 +16,3 @@ Utils::loadYaml(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SE
 AutoLoader::load();
 
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . CONFIG . DIRECTORY_SEPARATOR . 'routes.php';
-require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor'  . DIRECTORY_SEPARATOR . 'php-activerecord' . DIRECTORY_SEPARATOR . 'php-activerecord' . DIRECTORY_SEPARATOR . 'ActiveRecord.php';

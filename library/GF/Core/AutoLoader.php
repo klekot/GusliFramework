@@ -7,6 +7,8 @@
 class AutoLoader {
     public static function load()
     {
+        require_once ROOT . DIRECTORY_SEPARATOR . 'vendor'  . DIRECTORY_SEPARATOR . 'autoload.php';
+
         spl_autoload_register(function ($class) {
             $class_filename = str_replace("\\", DIRECTORY_SEPARATOR, $class) . ".php";
             $class_root = ROOT;

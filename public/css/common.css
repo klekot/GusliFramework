@@ -73,3 +73,29 @@ html {
 .col-lg-5.search {
     padding-right: 0px;
 }
+
+.glyphicon.glyphicon-plus-sign.add-model {
+    color: green;
+    font-size: 20px;
+}
+
+.glyphicon.glyphicon-edit.edit-model {
+    color: blue;
+    font-size: 20px;
+}
+
+.glyphicon.glyphicon-minus-sign.delete-model {
+    color: red;
+    font-size: 20px;
+}
+
+.breadcrumbs-container {
+    margin-top: 10px;
+}
+
+.breadcrumbs li {
+    float: left;
+    #padding-right: 20px;
+    margin-left: 10px;
+    list-style-type: none;
+}

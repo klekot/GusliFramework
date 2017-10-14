@@ -27,7 +27,7 @@ class Application
 
     public function run()
     {
-        $query = rtrim($_SERVER['QUERY_STRING'], '/');
+        $query = trim($_SERVER['REQUEST_URI'], '/');
 
         Router::dispatch($query);
     }
