@@ -37,35 +37,6 @@ html {
     padding-top: 50px;
 }
 
-.main-title {
-    font-family: 'Yeseva One', cursive;
-}
-
-.main-igor {
-    text-align: center;
-}
-
-.main-igor img {
-    border-radius: 10%;
-    max-height: 300px;
-    margin: 50px;
-}
-
-.cite-container {
-    content-align: center;
-}
-
-.cite {
-    margin: 0 auto;
-    max-width: 410px;
-    font-family: 'Marck Script', cursive;
-    font-size: 20px;
-}
-
-.cite ul {
-    list-style-type: none;
-}
-
 .input-group {
     padding-top: 7px;
 }

@@ -21,8 +21,8 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="/css/starter-template.css" rel="stylesheet">
+    <!-- Custom common styles -->
+    <link href="/css/common.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -56,7 +56,11 @@
 
 <div class="container">
 
-    SITE_CONTENT
+    <div class="layout-wrapper">
+
+        SITE_CONTENT
+
+    </div>
 
 </div><!-- /.container -->
 
